@@ -1,0 +1,27 @@
+.btn-hak * { 
+	margin: 0; padding: 0;
+	/*Resetting a-tag and button-tag styles*/ 
+	text-decoration: none;
+	background-color: unset;
+	border: 0;
+}
+.btn-hak {
+	position: relative;
+	width: 100%; height: 100%;
+}
+.btn-hak-overlay, .btn-hak-content  {
+	position: absolute;
+}
+.btn-hak-overlay {
+	z-index: -1;
+	width: 100%; height: 100%;
+	opacity: 0;
+	background-color: #e0e3e9;
+}
+.btn-hak-content { width: max-content; height: max-content; }
+.btn-hak-wrapper {
+	padding: 10px;
+}
+.btn-hak-content * {
+	color: #3b4252;
+}
