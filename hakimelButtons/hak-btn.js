@@ -7,10 +7,19 @@ Array.from(document.getElementsByClassName("btn-hak")).forEach( (entry) => {
 	let overlay = entry.getElementsByClassName("btn-hak-overlay")[0];
 	let content = entry.getElementsByClassName("btn-hak-content")[0];
 
+	if (entry.style.width == "") {
+		entry.style.width = content.clientWidth + "px";
+	} else {
+		content.style.width = entry.style.width;
+	}
+	if (entry.style.height == "") {
+		entry.style.height = content.clientHeight + "px";
+	} else {
+		content.style.height = entry.style.height;
+	}
+
 	overlay.style.width = content.clientWidth + "px";
 	overlay.style.height = content.clientHeight + "px";
-	entry.style.width = content.clientWidth + "px";
-	entry.style.height = content.clientHeight + "px";
 
 	entry.addEventListener("mouseenter", overlayAnimationTrigger);
 	entry.addEventListener("mouseleave", overlayAnimationTrigger);
