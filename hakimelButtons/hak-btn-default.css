@@ -18,7 +18,10 @@
 	opacity: 0;
 	background-color: #e0e3e9;
 }
-.btn-hak-content { width: max-content; height: max-content; }
+.btn-hak-content { 
+	width: max-content; height: max-content;
+	left: 0; top: 0;
+}
 .btn-hak-wrapper {
 	padding: 10px;
 }
