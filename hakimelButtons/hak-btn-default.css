@@ -16,7 +16,7 @@
 	z-index: -1;
 	width: 100%; height: 100%;
 	opacity: 0;
-	background-color: #e0e3e9;
+	background-color: #f8f9fa;
 }
 .btn-hak-content { 
 	width: max-content; height: max-content;
@@ -26,5 +26,5 @@
 	padding: 10px;
 }
 .btn-hak-content * {
-	color: #3b4252;
+	color: #343a40;
 }
