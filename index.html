@@ -76,7 +76,7 @@
 						<div class="row mt-4 pt-4"><div class="col">
 							<div class="btn-hak border border-danger" style="width: 100%">
 								<div class="btn-hak-overlay bg-danger"></div>
-								<button class="btn-hak-content" onclick="showIncludeMe('hakBtn')">
+								<button class="btn-hak-content" onclick="showIncludeMe(this, 'hakBtn')">
 									<div class="btn-hak-wrapper text-dark">Include Me!</div>
 								</button>
 							</div>
@@ -137,9 +137,20 @@
   <script defer type="text/javascript" src="hakimelButtons/hak-btn.js"></script>
 
 	<script type="text/javascript">
-		function showIncludeMe( id ) {
-			let div = document.getElementById(id);
-			div.classList.toggle('d-none');
+		function showIncludeMe(e, id) {
+			let toggleContent = document.getElementById(id);
+			console.log(e)
+			
+			toggleContent.classList.toggle('d-none');
+			e.parentNode.classList.toggle('static');
+			if (e.parentNode.classList.contains('static')) {
+				e.parentNode.removeEventListener("mouseenter", overlayAnimationTrigger);
+				e.parentNode.removeEventListener("mouseleave", overlayAnimationTrigger);
+			} else {
+				e.parentNode.addEventListener("mouseenter", overlayAnimationTrigger);
+				e.parentNode.addEventListener("mouseleave", overlayAnimationTrigger);
+			}
+
 			window.scrollTo(0,document.body.scrollHeight); // Scroll to bottom of page
 		}
 	</script>
