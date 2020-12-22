@@ -127,6 +127,15 @@ class HakBtn {
 			}
 		}
 
-		el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
+		if (el.state == 'dynamic' && !el.disabled) {
+			el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
+		}
+	}
+
+	static() {
+		this.state = 'static';
+	}
+	dynamic() {
+		this.state = 'dynamic';
 	}
 }
