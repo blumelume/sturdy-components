@@ -8,7 +8,7 @@ class HakBtn {
 		this.animationEasing = "cubic-bezier(.02,.42,.27,1)";
 
 		// Determining state and disabled
-		this.state = 'dynamic';
+		this.static = false;
 		this.disabled = false;
 
 		// Adding all the event listeners
@@ -61,8 +61,8 @@ class HakBtn {
 	}
 
 	refresh() {
-		// Determining state and disabled
-		this.state = this.obj.classList.contains('static') ? 'static' : 'dynamic';
+		// Determining static and disabled
+		this.static = this.obj.classList.contains('static') ? true : false;
 		this.disabled = this.obj.classList.contains('disabled') ? true : false;
 
 		this.fetchChildren();
@@ -145,7 +145,7 @@ class HakBtn {
 			}
 		}
 
-		if (el.state == 'dynamic' && !el.disabled) {
+		if (!el.static && !el.disabled) {
 			el.obj.classList.toggle('hover');
 			el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
 		}
