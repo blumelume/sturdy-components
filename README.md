@@ -1,6 +1,12 @@
 # Sturdy Components
 Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS.
 
+## To-Do
+1. Add 'onresize'-support
+	* 'reload' / 'refresh' function
+	* call on page load, on resize ...
+2. Adjust breakpoints
+
 
 ## Hakimel Buttons (hak-btn)
 A standard 'hak-btn' is composed of a main container that holds the overlay and main content. 
