@@ -33,7 +33,6 @@ class HakBtn {
 
 	setSizes() {
 		// Setting the different elements sizes (parent, content, overlay) depending on user-settings
-		console.log(this.obj, this.obj.clientHeight)
 		if (this.obj.style.width != "") { // Width has been set (by user / script)
 			// Elements get scaled (width) after obj 
 			this.overlay.style.width = this.obj.clientWidth + "px";
