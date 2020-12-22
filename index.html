@@ -145,10 +145,10 @@
 			e.parentNode.classList.toggle('static');
 			if (e.parentNode.classList.contains('static')) {
 				e.parentNode.removeEventListener("mouseenter", overlayAnimationTrigger);
-				e.parentNode.removeEventListener("mouseleave", overlayAnimationTrigger);
+				e.removeEventListener("mouseleave", overlayAnimationTrigger);
 			} else {
-				e.parentNode.addEventListener("mouseenter", overlayAnimationTrigger);
-				e.parentNode.addEventListener("mouseleave", overlayAnimationTrigger);
+				e.addEventListener("mouseenter", overlayAnimationTrigger);
+				e.addEventListener("mouseleave", overlayAnimationTrigger);
 			}
 
 			window.scrollTo(0,document.body.scrollHeight); // Scroll to bottom of page
