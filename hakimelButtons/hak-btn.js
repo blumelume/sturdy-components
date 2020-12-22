@@ -2,27 +2,27 @@ let offset = 15;
 
 // Adding event-listeners to all buttons
 Array.from(document.getElementsByClassName("btn-hak")).forEach( (entry) => {
-	console.log(entry)
+		let overlay = entry.getElementsByClassName("btn-hak-overlay")[0];
+		let content = entry.getElementsByClassName("btn-hak-content")[0];
 
-	let overlay = entry.getElementsByClassName("btn-hak-overlay")[0];
-	let content = entry.getElementsByClassName("btn-hak-content")[0];
+		if (entry.style.width == "") {
+			entry.style.width = content.clientWidth + "px";
+		} else {
+			content.style.width = entry.style.width;
+		}
+		if (entry.style.height == "") {
+			entry.style.height = content.clientHeight + "px";
+		} else {
+			content.style.height = entry.style.height;
+		}
 
-	if (entry.style.width == "") {
-		entry.style.width = content.clientWidth + "px";
-	} else {
-		content.style.width = entry.style.width;
-	}
-	if (entry.style.height == "") {
-		entry.style.height = content.clientHeight + "px";
-	} else {
-		content.style.height = entry.style.height;
-	}
+		overlay.style.width = content.clientWidth + "px";
+		overlay.style.height = content.clientHeight + "px";
 
-	overlay.style.width = content.clientWidth + "px";
-	overlay.style.height = content.clientHeight + "px";
-
-	entry.addEventListener("mouseenter", overlayAnimationTrigger);
-	entry.addEventListener("mouseleave", overlayAnimationTrigger);
+	if (!entry.classList.contains('static') && !entry.classList.contains('disabled')) {
+		entry.addEventListener("mouseenter", overlayAnimationTrigger);
+		entry.addEventListener("mouseleave", overlayAnimationTrigger);
+	} 
 });
 
 function animate(element, offsetX, offsetY, out) {
@@ -56,6 +56,8 @@ function animate(element, offsetX, offsetY, out) {
 }
 
 function overlayAnimationTrigger(event) {
+	this.classList.toggle('hover');
+
 	let overlay = this.getElementsByClassName("btn-hak-overlay")[0];
 
 	let rect = event.target.getBoundingClientRect();

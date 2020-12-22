@@ -19,6 +19,9 @@
 	opacity: 0;
 	background-color: #f8f9fa;
 }
+.btn-hak.static .btn-hak-overlay {
+	opacity: 1;
+}
 .btn-hak-content { 
 	width: max-content; height: max-content;
 	left: 0; top: 0;
