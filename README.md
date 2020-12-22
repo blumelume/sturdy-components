@@ -1,5 +1,5 @@
 # Sturdy Components
-Easily CDN-includable, Bootstrap-friendly web components written in HTML, CSS and JS.
+Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS.
 
 
 ## Hakimel Buttons (hak-btn)
