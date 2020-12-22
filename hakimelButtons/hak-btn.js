@@ -69,12 +69,12 @@ class HakBtn {
 		this.setSizes();
 	}
 
-	static() {
+	toStatic() {
 		this.obj.classList.remove('dynamic');
 		this.obj.classList.add('static');
 		this.refresh();
 	}
-	dynamic() {
+	toDynamic() {
 		this.obj.classList.remove('static');
 		this.obj.classList.add('dynamic');
 		this.refresh();
