@@ -145,12 +145,14 @@
 			hakBtns.push(hakBtn);
 		});
 
+
 		function showIncludeMe(el, id) {
 			let toggleContent = document.getElementById(id);
 			
 			toggleContent.classList.toggle('d-none');
+			
 			hakBtns.forEach( (hakBtn) => {
-				if (hakBtn.obj == el) {
+				if (hakBtn.obj == el.parentNode) {
 					if (hakBtn.state == 'static') {
 						hakBtn.dynamic();
 					} else {
