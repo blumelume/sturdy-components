@@ -147,10 +147,10 @@
 			
 			hakBtns.forEach( (hakBtn) => {
 				if (hakBtn.obj == el.parentNode) {
-					if (hakBtn.state == "static") {
-						hakBtn.dynamic();
+					if (hakBtn.static) {
+						hakBtn.toDynamic();
 					} else {
-						hakBtn.static();
+						hakBtn.toStatic();
 					}
 					hakBtn.refresh();
 				}
