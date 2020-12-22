@@ -1,15 +1,15 @@
 class HakBtn {
 
-	constructor(obj, state, disabled, width, height) {
+	constructor(obj) {
 		this.obj = obj;
-		this.state = state;
-		this.disabled = disabled;
-		this.width = width;
-		this.height = height;
 		
 		this.offset = 15;
 		this.animationDuration = 250;
 		this.animationEasing = "cubic-bezier(.02,.42,.27,1)";
+
+		// Determining state and disabled
+		this.state = this.obj.classList.contains('static') ? 'static' : 'dynamic';
+		this.disabled = this.obj.classList.contains('disabled') ? true : false;
 
 		// Adding all the event listeners
 		obj.addEventListener("mouseenter", () => { this.overlayAnimationTrigger(event, this) });
@@ -53,6 +53,11 @@ class HakBtn {
 			this.overlay.style.height = this.content.clientHeight + "px";
 		}
 
+	}
+
+	init() {
+		this.fetchChildren();
+		this.setSizes();
 	}
 
 	animation(el, offsetX, offsetY, out) {
@@ -124,15 +129,4 @@ class HakBtn {
 
 		el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
 	}
-
 }
-
-// Adding event-listeners to all buttons
-Array.from(document.getElementsByClassName("btn-hak")).forEach( (entry) => {
-	let state = entry.classList.contains('static') ? 'static' : 'dynamic';
-	let disabled = entry.classList.contains('disabled') ? true : false;
-
-	let hakBtn = new HakBtn(entry, state, disabled, entry.clientWidth, entry.clientHeight);
-	hakBtn.fetchChildren();
-	hakBtn.setSizes();
-});
