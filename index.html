@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Code highlighting through Highlight.js -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 
 	<style media="screen">
 		.col * {
 			text-align: center;
+		}
+
+		.includeMe .html * { 
+			font-size: 0.9em;
+			text-align: left !important;
 		}
 	</style>
 
@@ -29,7 +40,7 @@
 			</div>
 			<div class="row mt-4 pt-4">
 
-				<div class="col border-right component pb-4">
+				<div class="col-4 border-right component pb-4">
 						
 						<div class="row"><div class="col">
 							<div class="btn-hak mx-auto">
@@ -65,15 +76,21 @@
 						<div class="row mt-4 pt-4"><div class="col">
 							<div class="btn-hak border border-danger" style="width: 100%">
 								<div class="btn-hak-overlay bg-danger"></div>
-								<button class="btn-hak-content">
+								<button class="btn-hak-content" onclick="showIncludeMe('hakBtn')">
 									<div class="btn-hak-wrapper text-dark">Include Me!</div>
 								</button>
 							</div>
 						</div></div>
 
+						<div class="d-none row includeMe mt-2 px-3" id="hakBtn"><div class="col pt-2 text-left border border-danger">
+							Copy these to the bottom (!) of your webiste (the components have to be loaded in already).
+							<br><br>
+							<pre><code class="html">&lt;link rel="stylesheet" href="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn-default.css"&gt;<br>&lt;script defer type="text/javascript" src="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn.js"&gt;&lt;/script&gt;</code></pre>
+						</div></div>
+
 				</div>
 
-				<div class="col border-right component pb-4">
+				<div class="col-4 border-right component pb-4">
 
 					<div class="row"><div class="col">
 							<div class="btn-hak mx-auto">
@@ -92,7 +109,7 @@
 
 				</div>
 
-				<div class="col component pb-4">
+				<div class="col-4 component pb-4">
 
 					<div class="row"><div class="col">
 							<div class="btn-hak mx-auto">
@@ -118,5 +135,13 @@
 
 	<link rel="stylesheet" href="hakimelButtons/hak-btn-default.css">
   <script defer type="text/javascript" src="hakimelButtons/hak-btn.js"></script>
+
+	<script type="text/javascript">
+		function showIncludeMe( id ) {
+			let div = document.getElementById(id);
+			div.classList.toggle('d-none');
+			window.scrollTo(0,document.body.scrollHeight); // Scroll to bottom of page
+		}
+	</script>
 
 </html>
