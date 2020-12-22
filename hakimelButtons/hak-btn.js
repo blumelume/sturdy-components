@@ -109,8 +109,6 @@ class HakBtn {
 	}
 
 	overlayAnimationTrigger(event, el) {
-		el.obj.classList.toggle('hover');
-
 		let rect = event.target.getBoundingClientRect();
 		let rectMouseX = event.clientX - rect.left; // X-Pos within element
 		let rectMouseY = event.clientY - rect.top; // X-Pos within element
@@ -148,6 +146,7 @@ class HakBtn {
 		}
 
 		if (el.state == 'dynamic' && !el.disabled) {
+			el.obj.classList.toggle('hover');
 			el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
 		}
 	}
