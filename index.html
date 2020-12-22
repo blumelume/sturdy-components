@@ -161,8 +161,8 @@
 			toggleContent.classList.toggle('d-none');
 			
 			hakBtns.forEach( (hakBtn) => {
-				if (hakBtn.content.getAttribute('onclick') == el.getAttribute('onclick')) {
-					if (toggleContent.classList.contains('d-none')) {
+				if (hakBtn.obj == el.parentNode) {
+					if (hakBtn.state == "static") {
 						hakBtn.dynamic();
 					} else {
 						hakBtn.static();
