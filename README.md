@@ -3,8 +3,8 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 
 ## To-Do
 1. HakBtn
+	* Support disabled (styling (& animations))
 	* Support button background that sits below the overlay
-	* 
 
 
 ## Hakimel Buttons
