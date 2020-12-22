@@ -8,7 +8,7 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 2. Adjust breakpoints
 
 
-## Hakimel Buttons (hak-btn)
+## Hakimel Buttons
 A standard 'hak-btn' is composed of a main container that holds the overlay and main content. 
 Both of which contain a wrapper that can hold the actual content.
 
