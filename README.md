@@ -2,7 +2,6 @@
 Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS.
 
 ## To-Do
-1. Adjust breakpoints
 
 
 ## Hakimel Buttons
