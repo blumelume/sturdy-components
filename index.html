@@ -47,9 +47,9 @@
 								<div class="btn-hak-overlay">
 									<div class="btn-hak-wrapper"><h3>&nbsp;</h3>include me!</div>
 								</div>
-								<div class="btn-hak-content">
+								<button class="btn-hak-content" onclick="showIncludeMe(this, 'hakBtn')">
 									<div class="btn-hak-wrapper"><h3>Hakimel Style Buttons</h3><br></div>
-								</div>
+								</button>
 							</div>
 						</div></div>
 
@@ -82,10 +82,11 @@
 							</div>
 						</div></div>
 
-						<div class="d-none row includeMe mt-2 px-3" id="hakBtn"><div class="col pt-2 text-left border border-danger">
-							Copy these to the bottom (!) of your webiste (the components have to be loaded in already).
-							<br><br>
-							<pre><code class="html">&lt;link rel="stylesheet" href="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn-default.css"&gt;<br>&lt;script defer type="text/javascript" src="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn.js"&gt;&lt;/script&gt;</code></pre>
+						<div class="d-none row includeMe mt-2 px-3" id="hakBtn"><div class="col py-2 text-left border border-danger">
+							Copy and include in your HTMl Document.
+							<br>
+							<pre class="mt-1"><code class="html">&lt;link rel="stylesheet" href="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn-default.css"&gt;<br>&lt;script defer type="text/javascript" src="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn.js"&gt;&lt;/script&gt;</code></pre>
+							For usage info visit the <a href="https://github.com/blumelume/sturdy-components/#hakimel-buttons" target="_blank">Github-Page</a>
 						</div></div>
 
 				</div>
@@ -145,6 +146,14 @@
 			hakBtns.push(hakBtn);
 		});
 
+		document.body.setAttribute('onload', "refreshHakButtons()");
+		document.body.setAttribute('onresize', "refreshHakButtons()");
+
+		function refreshHakButtons() {
+			hakBtns.forEach( (hakBtn) => {
+				hakBtn.refresh();
+			});
+		}
 
 		function showIncludeMe(el, id) {
 			let toggleContent = document.getElementById(id);
@@ -152,12 +161,13 @@
 			toggleContent.classList.toggle('d-none');
 			
 			hakBtns.forEach( (hakBtn) => {
-				if (hakBtn.obj == el.parentNode) {
-					if (hakBtn.state == 'static') {
+				if (hakBtn.content.getAttribute('onclick') == el.getAttribute('onclick')) {
+					if (toggleContent.classList.contains('d-none')) {
 						hakBtn.dynamic();
 					} else {
 						hakBtn.static();
 					}
+					hakBtn.refresh();
 				}
 			});
 
