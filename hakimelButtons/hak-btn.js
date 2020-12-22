@@ -69,10 +69,14 @@ class HakBtn {
 	}
 
 	static() {
-		this.state = 'static';
+		this.obj.classList.remove('dynamic');
+		this.obj.classList.add('static');
+		this.refresh();
 	}
 	dynamic() {
-		this.state = 'dynamic';
+		this.obj.classList.remove('static');
+		this.obj.classList.add('dynamic');
+		this.refresh();
 	}
 
 	animation(el, offsetX, offsetY, out) {
