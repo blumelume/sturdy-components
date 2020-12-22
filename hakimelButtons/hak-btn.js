@@ -8,8 +8,8 @@ class HakBtn {
 		this.animationEasing = "cubic-bezier(.02,.42,.27,1)";
 
 		// Determining state and disabled
-		this.state = this.obj.classList.contains('static') ? 'static' : 'dynamic';
-		this.disabled = this.obj.classList.contains('disabled') ? true : false;
+		this.state = 'dynamic';
+		this.disabled = false;
 
 		// Adding all the event listeners
 		obj.addEventListener("mouseenter", () => { this.overlayAnimationTrigger(event, this) });
@@ -56,8 +56,23 @@ class HakBtn {
 	}
 
 	init() {
+		this.refresh();
+	}
+
+	refresh() {
+		// Determining state and disabled
+		this.state = this.obj.classList.contains('static') ? 'static' : 'dynamic';
+		this.disabled = this.obj.classList.contains('disabled') ? true : false;
+
 		this.fetchChildren();
 		this.setSizes();
+	}
+
+	static() {
+		this.state = 'static';
+	}
+	dynamic() {
+		this.state = 'dynamic';
 	}
 
 	animation(el, offsetX, offsetY, out) {
@@ -130,12 +145,5 @@ class HakBtn {
 		if (el.state == 'dynamic' && !el.disabled) {
 			el.animation(el, el.offset*offsets[0], el.offset*offsets[1], out);
 		}
-	}
-
-	static() {
-		this.state = 'static';
-	}
-	dynamic() {
-		this.state = 'dynamic';
 	}
 }
