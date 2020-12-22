@@ -134,22 +134,30 @@
 	</body>
 
 	<link rel="stylesheet" href="hakimelButtons/hak-btn-default.css">
-  <script defer type="text/javascript" src="hakimelButtons/hak-btn.js"></script>
+  <script type="text/javascript" src="hakimelButtons/hak-btn.js"></script>
 
-	<script type="text/javascript">
-		function showIncludeMe(e, id) {
+	<script defer type="text/javascript">
+		let hakBtns = [];
+
+		Array.from(document.getElementsByClassName('btn-hak')).forEach( (entry) => {
+			let hakBtn = new HakBtn(entry);
+			hakBtn.init();
+			hakBtns.push(hakBtn);
+		});
+
+		function showIncludeMe(el, id) {
 			let toggleContent = document.getElementById(id);
-			console.log(e)
 			
 			toggleContent.classList.toggle('d-none');
-			e.parentNode.classList.toggle('static');
-			if (e.parentNode.classList.contains('static')) {
-				e.parentNode.removeEventListener("mouseenter", overlayAnimationTrigger);
-				e.removeEventListener("mouseleave", overlayAnimationTrigger);
-			} else {
-				e.addEventListener("mouseenter", overlayAnimationTrigger);
-				e.addEventListener("mouseleave", overlayAnimationTrigger);
-			}
+			hakBtns.forEach( (hakBtn) => {
+				if (hakBtn.obj == el) {
+					if (hakBtn.state == 'static') {
+						hakBtn.dynamic();
+					} else {
+						hakBtn.static();
+					}
+				}
+			});
 
 			window.scrollTo(0,document.body.scrollHeight); // Scroll to bottom of page
 		}
