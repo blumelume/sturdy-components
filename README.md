@@ -27,7 +27,7 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 Paste these two into your HTML file
 
 	<link rel="stylesheet" href="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn-default.css">
-	<script defer type="text/javascript" src="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn.js"></script>
+	<script type="text/javascript" src="https://blumelume.github.io/sturdy-components/hakimelButtons/hak-btn.js"></script>
 
 #### 2. Place
 This is the default hakButton.
