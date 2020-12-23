@@ -31,23 +31,24 @@ Paste these two into your HTML file
 #### 2. Place
 This is the default hakButton.
 
-	<div class="hak-btn">
-		<div class="hak-btn-overlay">
-			<div class="hak-btn-wrapper"></div>
+	<div class="btn-hak">
+		<div class="btn-hak-overlay">
+			<div class="btn-hak-wrapper"></div>
 		</div>
-		<div class="hak-btn-content">
-			<div class="hak-btn-wrapper">
+		<div class="btn-hak-content">
+			<div class="btn-hak-wrapper">
 				Your Content
 			</div>
 		</div>
 	</div>
 
 #### 3. Initialize
+A new HakButton instance requires a reference to the DOM Element with the class 'btn-hak' (here 'el').
 
 	let hakBtn = new HakBtn(el);
 	hakBtn.init();
 
-To initialize all of then in one go, do:
+To initialize all of them in one go, do:
 
 	Array.from(document.getElementsByClassName('btn-hak')).forEach( (entry) => {
 		let hakBtn = new HakBtn(entry);
@@ -62,28 +63,30 @@ It's probably a good idea to keep track of your instances with a list.
 A standard 'hak-btn' is composed of a main container that holds the overlay and main content. 
 Both of which contain a wrapper that can hold the actual content.
 
-	<div class="hak-btn">
-		<div class="hak-btn-overlay">
-			<div class="hak-btn-wrapper"></div>
+	<div class="btn-hak">
+		<div class="btn-hak-overlay">
+			<div class="btn-hak-wrapper"></div>
 		</div>
-		<div class="hak-btn-content">
-			<div class="hak-btn-wrapper"></div>
+		<div class="btn-hak-content">
+			<div class="btn-hak-wrapper"></div>
 		</div>
 	</div>
 
-All content that is placed in the overlay wrapper gets animated with the overlay. The default, alwas visible text (or whatever content you put in there) is placed in the wrapper inside the 'hak-btn-content' div. 
+All content that is placed in the overlay wrapper gets animated with the overlay. The default, alwas visible text (or whatever content you put in there) is placed in the wrapper inside the 'btn-hak-content' div. 
 
 It doesn't matter what kind of HTML-elements these are as long as the classes are correct. That means the HakButton can be used like a normal HTML-button or like a normal HTML-hyperlink like so:
 	
 	...
-		<button class="hak-btn-content" onclick="...">
-			<div class="hak-btn-wrapper"></div>
+		<button class="btn-hak-content" onclick="...">
+			<div class="btn-hak-wrapper"></div>
 		</button>
+
+or
+
 	...
-		<a class="hak-btn-content" href="...">
-			<div class="hak-btn-wrapper"></div>
+		<a class="btn-hak-content" href="...">
+			<div class="btn-hak-wrapper"></div>
 		</a>
-	...
 
 #### setSizes Function
 ```setSizes()``` is a function that when called goes through the children and seperately sets widths and heights depending on whether the user has set any on the btn-hak element. (```hakBtn.setSizes();```)
