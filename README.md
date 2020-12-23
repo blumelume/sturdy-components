@@ -11,6 +11,16 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 
 ## Hakimel Buttons
 
+1. [Getting started](https://github.com/blumelume/sturdy-components/#getting-started.)
+	* [Include](https://github.com/blumelume/sturdy-components/#1-include)
+	* [Place](https://github.com/blumelume/sturdy-components/#2-place)
+	* [Initialize](https://github.com/blumelume/sturdy-components/#3-initialize)
+
+2. [How it works](https://github.com/blumelume/sturdy-components#how-does-it-work)	
+	* [setSizes Function](https://github.com/blumelume/sturdy-components#setsizes-function)
+	* [refresh Function](https://github.com/blumelume/sturdy-components#refresh-function)
+	* [Button states](https://github.com/blumelume/sturdy-components#button-states)
+
 ### Getting started.
 #### 1. Include
 Paste these two into your HTML file
