@@ -4,10 +4,13 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 ### [**View the Demo!**](https://blumelume.github.io/sturdy-components)
 
 ## To-Do
+0. Page
+	* Enable the user to include the whole bundle
+	* Select components and get all links assembled in oe paste-box (see google fonts) 
 1. HakBtn
 	* ~~Support disabled (styling (& animations))~~
 	* Support button background that sits below the overlay
-	* Documentation
+	* ~~Documentation~~
 
 ---
 
