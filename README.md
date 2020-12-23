@@ -1,6 +1,8 @@
 # Sturdy Components
 Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS.
 
+### [**View the Demo!**](https://blumelume.github.io/sturdy-components)
+
 ## To-Do
 1. HakBtn
 	* ~~Support disabled (styling (& animations))~~
