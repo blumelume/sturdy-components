@@ -17,6 +17,7 @@ Easily includable, Bootstrap-friendly web components written in HTML, CSS and JS
 	* [Initialize](https://github.com/blumelume/sturdy-components/#3-initialize)
 
 2. [How it works](https://github.com/blumelume/sturdy-components#how-does-it-work)	
+	* [Child Elements](https://github.com/blumelume/sturdy-components#child-elements)
 	* [setSizes Function](https://github.com/blumelume/sturdy-components#setsizes-function)
 	* [refresh Function](https://github.com/blumelume/sturdy-components#refresh-function)
 	* [Button states](https://github.com/blumelume/sturdy-components#button-states)
@@ -87,6 +88,12 @@ or
 		<a class="btn-hak-content" href="...">
 			<div class="btn-hak-wrapper"></div>
 		</a>
+
+#### Child Elements
+A HakButton instance also always contains references to the overlay and content DOM Nodes. They can be acessed and modified through:
+
+	hakBtn.overlay; 
+	hakBtn.content;
 
 #### setSizes Function
 ```setSizes()``` is a function that when called goes through the children and seperately sets widths and heights depending on whether the user has set any on the btn-hak element. (```hakBtn.setSizes();```)
