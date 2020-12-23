@@ -1,0 +1,40 @@
+.btn-goto {
+	width: 50px; height: 50px;
+
+	text-decoration: none;
+	background-color: none;
+	border: 0;
+}
+.btn-goto:focus { outline: 0 !important; }
+
+.btn-goto-arm {
+	display: block;
+	width: 150%;
+	height: 1px; /*Line thickness*/
+	transform-origin: left;
+	background-color: #343a40;
+}
+
+.btn-goto, .btn-goto-arm {
+	transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-goto:hover {
+	width: 60px; height: 60px;
+}
+.btn-goto-arm:first-child {
+	transform: translate(25%, 1px) rotate(-45deg);
+}
+.btn-goto-arm:last-child {
+	transform: translate(25%, 0px) rotate(45deg);
+}
+
+.btn-goto:hover .btn-goto-arm { width: 100%; }
+.btn-goto:hover .btn-goto-arm:first-child {
+	transform: translate(0%, 1px) rotate(-25deg);
+}
+.btn-goto:hover .btn-goto-arm:last-child {
+	transform: translate(0%, 0px) rotate(25deg);
+}
+/*.btn-goto.max-width { width: 100%; }
+.btn-goto.max-height { height: 100%; }*/
