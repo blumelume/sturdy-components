@@ -1,11 +1,15 @@
 .btn-goto {
-	width: 50px; height: 50px;
+	width: 100%; height: 100%;
 	box-shadow: inset 0px 0px 0px 0px white;
 
 	text-decoration: none;
 	background-color: #f8f9fa;
 	border: 0;
 }
+.btn-goto.btn-goto-sm { width: 30px; height: 30px; }
+.btn-goto.btn-goto-md { width: 40px; height: 40px; }
+.btn-goto.btn-goto-lg { width: 50px; height: 50px; }
+
 .btn-goto:focus { outline: 0 !important; }
 
 .btn-goto-up { transform: rotate(90deg); }
@@ -20,6 +24,10 @@
 	background-color: #343a40;
 }
 
+.btn-goto.btn-goto-sm .btn-goto-arm { width: 200%; }
+.btn-goto.btn-goto-md .btn-goto-arm { width: 160%; }
+.btn-goto.btn-goto-lg .btn-goto-arm { width: 140%; }
+
 .btn-goto, .btn-goto-arm { transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); }
 
 .btn-goto:hover { box-shadow: inset 0px 0px 0px 3px white; }
@@ -32,6 +40,3 @@
 
 .btn-goto:active .btn-goto-arm:first-child { transform: translate(0%, 1px) rotate(0deg); }
 .btn-goto:active .btn-goto-arm:last-child { transform: translate(0%, 0px) rotate(0deg); }
-
-/*.btn-goto.max-width { width: 100%; }
-.btn-goto.max-height { height: 100%; }*/
